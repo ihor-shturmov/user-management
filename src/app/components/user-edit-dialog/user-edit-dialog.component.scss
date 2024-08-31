@@ -1,0 +1,26 @@
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* Add padding around the form */
+  gap: 15px; /* Add space between form fields */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  min-width: 80px; /* Ensure buttons are consistently sized */
+}
+
+h2.mat-dialog-title {
+  text-align: center;
+  margin-bottom: 20px;
+}

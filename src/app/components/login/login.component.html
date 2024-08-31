@@ -1,0 +1,35 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username"/>
+        @if (loginForm.get('username')?.invalid) {
+          <mat-error>Username is required</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password"/>
+        @if (loginForm.get('password')?.invalid) {
+          <mat-error>Password is required</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="(loading$ | async) || loginForm.invalid">
+          Login
+        </button>
+        @if (loading$ | async) {
+          <mat-spinner diameter="30"></mat-spinner>
+        }
+      </div>
+
+      @if (error$ | async; as error) {
+        <mat-error class="error-message">{{ error }}</mat-error>
+      }
+    </form>
+  </mat-card>
+</div>

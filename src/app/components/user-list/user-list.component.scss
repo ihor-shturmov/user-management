@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  margin-top: 20px;
 }
 
 .mat-elevation-z8 {
@@ -8,4 +9,15 @@ table {
 
 button {
   color: #3f51b5;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mat-spinner {
+  margin: auto;
 }

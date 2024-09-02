@@ -3,7 +3,9 @@
   loading: loading$ | async,
 }; as data) {
   @if (data.loading) {
-    <mat-spinner></mat-spinner>
+      <div class="spinner-container">
+          <mat-spinner></mat-spinner>
+      </div>
   } @else {
     <div>
       <table mat-table [dataSource]="data.users || []" class="mat-elevation-z8">
